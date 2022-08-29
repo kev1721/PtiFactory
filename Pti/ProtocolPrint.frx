@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="06/03/2012 22:59:16" ReportInfo.Modified="06/04/2012 00:16:59" ReportInfo.CreatorVersion="1.8.1.0">
+  <Dictionary>
+    <TableDataSource Name="parameters" ReferenceName="parameters.parameters" DataType="System.Int32" Enabled="true">
+      <Column Name="EventDate" DataType="System.DateTime"/>
+      <Column Name="EventTime" DataType="System.DateTime"/>
+      <Column Name="Event" DataType="System.String"/>
+      <Column Name="Frame" DataType="System.Int16"/>
+      <Column Name="Device" DataType="System.Int16"/>
+      <Column Name="Reference" DataType="System.Int16"/>
+      <Column Name="Description" DataType="System.String"/>
+      <Column Name="EventValue" DataType="System.Single"/>
+    </TableDataSource>
+    <Parameter Name="KRPname" DataType="System.String"/>
+  </Dictionary>
+  <ReportPage Name="Page1">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="37.8">
+      <TextObject Name="Text15" Top="9.45" Width="765.45" Height="18.9" Text="Протокол мониторинга корпуса  &quot;[KRPname]&quot; за [parameters.EventDate]" Format="Date" Format.Format="d" HorzAlign="Center"/>
+    </ReportTitleBand>
+    <DataBand Name="Data2" Top="55.25" Width="718.2" Height="9.45">
+      <DataHeaderBand Name="DataHeader1" Top="41.8" Width="718.2" Height="9.45"/>
+    </DataBand>
+    <DataBand Name="Data1" Top="91.6" Width="718.2" Height="18.9" CanGrow="true" DataSource="parameters">
+      <TextObject Name="Text1" Left="179.55" Width="94.5" Height="18.9" Border.Lines="All" Text="[parameters.EventTime]" Format="Time" Format.Format="T" HorzAlign="Center"/>
+      <TextObject Name="Text3" Left="274.05" Width="94.5" Height="18.9" Border.Lines="All" Text="[parameters.Reference]" HorzAlign="Center"/>
+      <TextObject Name="Text5" Left="463.05" Width="94.5" Height="18.9" Border.Lines="All" Text="[parameters.EventValue]" Format="Number" Format.UseLocale="true" HorzAlign="Center" WordWrap="false" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text7" Left="368.55" Width="94.5" Height="18.9" Border.Lines="All" Text="[parameters.Description]" HorzAlign="Center"/>
+      <DataHeaderBand Name="DataHeader2" Top="68.7" Width="718.2" Height="18.9">
+        <TextObject Name="Text6" Left="463.05" Width="94.5" Height="18.9" Border.Lines="All" Text="Значение" HorzAlign="Center"/>
+        <TextObject Name="Text2" Left="179.55" Width="94.5" Height="18.9" Border.Lines="All" Text="Время" HorzAlign="Center"/>
+        <TextObject Name="Text4" Left="274.05" Width="94.5" Height="18.9" Border.Lines="All" Text="Ссылка" HorzAlign="Center"/>
+        <TextObject Name="Text8" Left="368.55" Width="94.5" Height="18.9" Border.Lines="All" Text="Датчик" HorzAlign="Center"/>
+      </DataHeaderBand>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="114.5" Width="718.2" Height="18.9"/>
+  </ReportPage>
+</Report>
